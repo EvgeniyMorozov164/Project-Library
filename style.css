@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Unformital";
+  src: url("/assets/fonts/Unformital/Unformital-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Unformital";
+  src: url("/assets/fonts/Unformital/Unformital-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --main-color: white;
+  --main-bg-color: black;  
+  --main-font: "Unformital";
+}
+
+body {
+  font-family: var(--main-font), sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
