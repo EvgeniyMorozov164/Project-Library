@@ -153,6 +153,8 @@ button:active {
 
 .book-info > p {
   font-size: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
   margin-left: 0;
   text-wrap: wrap;
 }
@@ -168,4 +170,16 @@ button:active {
   width: 100%;
   height: 40px;
   font-size: 1.3rem;
+}
+
+.git-link,
+.year {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.git-link {
+  list-style: none;
+  text-decoration: none;
+  color: var(--main-color);  
 }
