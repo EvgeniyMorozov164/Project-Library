@@ -19,6 +19,10 @@
   --main-bg-color: black;  
   --main-font: "Unformital";
   --main-border: 1px solid white;
+  --btn-hover-bg-color: lightgray;
+  --btn-hover-color: black;
+  --btn-hover-border: 1px solid lightgray;
+  --btn-active-color: green;
 }
 
 * {
@@ -38,6 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .header,
@@ -63,11 +68,104 @@ body {
 }
 
 .heading1 {
-  margin-right: calc(49% - 90px);
+  margin-right: 50%;
+  transform: translateX(50%);
 }
 
 .heading1 h1 {
   font-size: 3rem;
   letter-spacing: 2px;
   line-height: 1.5;
+}
+
+.main {
+  width: 100%;
+  min-height: calc(100vh - 204px - 20px);  
+  border: var(--main-border);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.heading2 h2 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+button {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  border: var(--main-border);
+  padding: 5px 10px;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover-bg-color);
+  color: var(--btn-hover-color);
+  border: var(--btn-hover-border);
+}
+
+button:active {
+  color: var(--btn-active-color);
+}
+
+.new-book-btn {
+  width: 150px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
+.books-container {
+  width: 100%;
+  height: calc(100vh - 204px - 20px - 40px - 2.2rem - 80px);
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.book-card {
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  border: var(--main-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-info {
+  width: 100%;
+  height: 340px;
+  display: flex;
+  flex-direction: column;  
+}
+
+.book-info > p {
+  font-size: 1.5rem;
+  margin-left: 0;
+  text-wrap: wrap;
+}
+
+.btn-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-container > button {
+  width: 100%;
+  height: 40px;
+  font-size: 1.3rem;
 }
