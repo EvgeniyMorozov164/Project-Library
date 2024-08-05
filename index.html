@@ -34,18 +34,6 @@
           <button type="button" class="read-btn">Read</button>
         </div>
       </div>
-      <!-- <div class="book-card">        
-        <div class="book-info">
-          <h3 class="book-title">The Hobbit</h3>
-          <p class="author">J.R.R. Tolkien</p>
-          <p class="pages">295</p>
-          <p class="read">not read yet</p>
-        </div>
-        <div class="btn-container">
-          <button type="button">Remove</button>
-          <button type="button">Read</button>
-        </div>
-      </div>
       <div class="book-card">        
         <div class="book-info">
           <h3 class="book-title">The Hobbit</h3>
@@ -129,8 +117,54 @@
           <button type="button">Remove</button>
           <button type="button">Read</button>
         </div>
-      </div> -->
+      </div>
+      <div class="book-card">        
+        <div class="book-info">
+          <h3 class="book-title">The Hobbit</h3>
+          <p class="author">J.R.R. Tolkien</p>
+          <p class="pages">295</p>
+          <p class="read">not read yet</p>
+        </div>
+        <div class="btn-container">
+          <button type="button">Remove</button>
+          <button type="button">Read</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="form-container">    
+    <form action="" class="form">
+      <fieldset>
+        <legend>NEW BOOK</legend>
+        <ul class="list">
+          <li class="list-item">
+            <label for="title">Book title</label>
+            <br>
+            <input type="text" id="title" class="title" name="title">
+          </li>
+          <li class="list-item">
+            <label for="author">Book author</label>
+            <br>
+            <input type="text" class="book-author" id="author" name="author">
+          </li>
+          <li class="list-item">
+            <label for="pagenum">Number of pages</label>
+            <br>
+            <input type="tel" id="pagenum" class="pagenum" name="pages">
+          </li>
+          <li class="list-item">
+            <label for="didyouread">Did you read?</label>
+            <br>
+            <input type="text" name="read" id="didyouread" placeholder="Yes/No" minlength="2" maxlength="3">
+          </li>
+        </ul>        
+      </fieldset>
+      <div class="modal-btn-container">
+        <button type="submit" class="add-book-btn">ADD BOOK</button>
+        <button type="button" class="close-modal-btn">Close modal</button>
+        
+      </div>
+    </form>
   </div>
   </main>
   <footer class="footer">
