@@ -9,6 +9,7 @@ const bookTitle = document.querySelector(".title");
 const bookAuthor = document.querySelector(".book-author");
 const numberOfPages = document.querySelector(".pagenum");
 const didYouRead = document.querySelector(".did-you-read");
+const date = document.querySelector(".year");
 
 const myLibrary = [];
 
@@ -24,6 +25,10 @@ function Book(title, author, pages, read) {
 }
 
 // INTERACTIONS
+
+document.addEventListener("DOMContentLoaded", () => {
+  getCurrentYear();
+});
 
 newBookBtn.addEventListener("click", () => {
 
@@ -136,4 +141,7 @@ const clearLibrary = () => {
   books.innerHTML = "";
 }
 
-
+const getCurrentYear = () => {
+  
+  date.textContent = new Date().getFullYear();
+}
