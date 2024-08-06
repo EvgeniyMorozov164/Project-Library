@@ -16,6 +16,7 @@ const myLibrary = [];
 // OBJECT CONSTRUCTOR
 
 function Book(title, author, pages, read) {
+
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -45,8 +46,36 @@ addBook.addEventListener("click", (e) => {
   hideForm();
   
   clearForm();
-  console.log(myLibrary);
-})
+
+  clearLibrary();
+  
+  displayBookCards();
+  
+});
+
+books.addEventListener("click", (e) => {
+
+  const index = e.target.parentElement.parentElement.dataset.id;
+
+  if (e.target.classList.contains("read-btn")) {
+    
+    myLibrary[index].read = "yes";
+
+    clearLibrary();
+  
+    displayBookCards();
+  }
+
+  if (e.target.classList.contains("remove-btn")) {
+
+    myLibrary.splice(index,1);
+
+    clearLibrary();
+  
+    displayBookCards();
+  }
+
+});
 
 // FUNCTIONS
 
@@ -72,9 +101,7 @@ const addBookToLibrary = () => {
 
   myLibrary.push(newBook); 
 
-  clearLibrary();
   
-  displayBookCards();
 }
 
 const clearForm = () => {
@@ -108,12 +135,5 @@ function displayBookCards() {
 const clearLibrary = () => {
   books.innerHTML = "";
 }
-// function displayLibrary() {
 
-//   if (myLibrary.length === 0) {
-//     return;
-//   }
-
-
-// }
 
