@@ -45,6 +45,7 @@ addBook.addEventListener("click", (e) => {
   hideForm();
   
   clearForm();
+  console.log(myLibrary);
 })
 
 // FUNCTIONS
@@ -69,7 +70,11 @@ const addBookToLibrary = () => {
 
   const newBook = new Book(bookTitle.value, bookAuthor.value, numberOfPages.value, didYouRead.value);
 
-  myLibrary.push(newBook);
+  myLibrary.push(newBook); 
+
+  clearLibrary();
+  
+  displayBookCards();
 }
 
 const clearForm = () => {
@@ -79,3 +84,36 @@ const clearForm = () => {
   numberOfPages.value = "";
   didYouRead.value = "";
 }
+
+function displayBookCards() {
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    
+    books.innerHTML += `<div class="book-card" data-id=${i}>        
+        <div class="book-info">
+          <p class="book-title">Title: ${myLibrary[i].title};</p>
+          <p class="author">Author: ${myLibrary[i].author};</p>
+          <p class="pages">Number of pages: ${myLibrary[i].pages};</p>
+          <p class="read">Read: ${myLibrary[i].read}.</p>
+        </div>
+        <div class="btn-container">
+          <button type="button" class="remove-btn">Remove</button>
+          <button type="button" class="read-btn">Read</button>
+        </div>
+      </div> `;
+  }
+
+}
+
+const clearLibrary = () => {
+  books.innerHTML = "";
+}
+// function displayLibrary() {
+
+//   if (myLibrary.length === 0) {
+//     return;
+//   }
+
+
+// }
+
