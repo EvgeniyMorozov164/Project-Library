@@ -10,6 +10,7 @@ const bookAuthor = document.querySelector(".book-author");
 const numberOfPages = document.querySelector(".pagenum");
 const didYouRead = document.querySelector(".did-you-read");
 const date = document.querySelector(".year");
+const form = document.querySelector(".form");
 
 const myLibrary = [];
 
@@ -42,21 +43,21 @@ closeModal.addEventListener("click", () => {
 
 });
 
-addBook.addEventListener("click", (e) => {
+// addBook.addEventListener("click", (e) => {
+ 
+//   e.preventDefault();
 
-  e.preventDefault();
+//   addBookToLibrary();
 
-  addBookToLibrary();
-
-  hideForm();
+//   hideForm();
   
-  clearForm();
+//   clearForm();
 
-  clearLibrary();
+//   clearLibrary();
   
-  displayBookCards();
+//   displayBookCards();
   
-});
+// });
 
 books.addEventListener("click", (e) => {
 
@@ -145,3 +146,26 @@ const getCurrentYear = () => {
   
   date.textContent = new Date().getFullYear();
 }
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleF = bookTitle.value;
+  const authorF = bookAuthor.value;
+  const pagesF = numberOfPages.value;
+  const readF = didYouRead.value;   
+  if (!titleF || !authorF || !pagesF || !readF) {
+    alert("Please, fill all the fields!");
+    return;
+  } 
+  else {
+    addBookToLibrary();
+
+  hideForm();
+  
+  clearForm();
+
+  clearLibrary();
+  
+  displayBookCards();
+  }
+})
